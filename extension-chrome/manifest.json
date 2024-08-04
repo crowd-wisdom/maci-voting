@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Bienvenida y Formulario",
+  "version": "1.0",
+  "description": "Una extensión de Chrome con pantalla de bienvenida y un formulario.",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "crowdWisdom.png",
+      "48": "crowdWisdom.png",
+      "128": "crowdWisdom.png"
+    }
+  },
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "icons": {
+    "16": "crowdWisdom.png",
+    "48": "crowdWisdom.png",
+    "128": "crowdWisdom.png"
+  }
+}
