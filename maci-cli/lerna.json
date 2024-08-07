@@ -1,16 +1,6 @@
 {
-  "packages": [
-    "circuits",
-    "cli",
-    "contracts",
-    "core",
-    "crypto",
-    "domainobjs",
-    "integrationTests",
-    "website",
-    "coordinator"
-  ],
-  "version": "1.2.5",
+  "packages": ["packages/*", "apps/*"],
+  "version": "2.1.0",
   "npmClient": "pnpm",
   "changelogPreset": {
     "name": "conventionalcommits",
