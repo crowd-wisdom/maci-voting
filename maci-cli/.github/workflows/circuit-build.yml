@@ -15,9 +15,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v3
+      - uses: pnpm/action-setup@v4
         with:
-          version: 8
+          version: 9
 
       - name: Use Node.js 20
         uses: actions/setup-node@v4
@@ -51,8 +51,8 @@ jobs:
 
       - name: Build circuits
         run: pnpm run build-test-circuits-wasm
-        working-directory: circuits
+        working-directory: packages/circuits
 
       - name: Test circuits
         run: pnpm run test
-        working-directory: circuits
+        working-directory: packages/circuits
