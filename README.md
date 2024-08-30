@@ -9,5 +9,7 @@ This is a fork of the [MACI](https://github.com/privacy-scaling-explorations/mac
 To use the CLI go to maci-cli/packages/cli and follow the [instructions](https://maci.pse.dev/docs/developers-references/typescript-code/cli).
 
 ## Updates
+2024-08-30
+- Add submodule to MACI repository.
 2024-08-07
-- Upgrade to MACI 2.0
+- Upgrade to MACI 2.0.
