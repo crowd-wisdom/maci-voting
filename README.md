@@ -11,5 +11,7 @@ To use the CLI go to maci-cli/packages/cli and follow the [instructions](https:/
 ## Updates
 2024-08-30
 - Add submodule to MACI repository.
+
+  
 2024-08-07
 - Upgrade to MACI 2.0.
