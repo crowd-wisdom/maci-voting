@@ -1,3 +1,6 @@
 [submodule "maci"]
 	path = maci
 	url = https://github.com/crowd-wisdom/maci.git
+[submodule "semaphore"]
+	path = semaphore
+	url = https://github.com/crowd-wisdom/semaphore.git
