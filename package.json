@@ -5,10 +5,19 @@
     "build:semaphore-contracts": "npx lerna exec --scope semaphore-contracts npm run compile",
     "build:maci-contracts": "npx lerna run build --scope maci-contracts",
     "test:semaphore-contracts": "npx lerna run test --scope semaphore-contracts",
-    "test:maci-contracts": "npx lerna run test --scope maci-contracts"
+    "test:maci-contracts": "npx lerna run test --scope maci-contracts",
+    "hardhat:node": "npx lerna exec --scope semaphore-contracts npm run start",
+    "hardhat:funds": "npx ts-node  scripts/hardhat-deploy.ts",
+    "deploy:semaphore": "npx lerna exec --scope semaphore-contracts -- yarn deploy --network localhost",
+    "deploy:maci": "npx lerna exec --scope maci-contracts -- pnpm run deploy --network localhost"
   },
-  "dependencies": {},
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "ethers": "^6.13.4"
+  },
   "devDependencies": {
-    "lerna": "^8.1.9"
+    "lerna": "^8.1.9",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
   }
 }
