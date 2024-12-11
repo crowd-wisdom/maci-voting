@@ -8,8 +8,9 @@
     "test:maci-contracts": "npx lerna run test --scope maci-contracts",
     "hardhat:node": "npx lerna exec --scope semaphore-contracts npm run start",
     "hardhat:funds": "npx ts-node  scripts/hardhat-deploy.ts",
-    "deploy:semaphore": "npx lerna exec --scope semaphore-contracts -- yarn deploy --network localhost",
-    "deploy:maci": "npx lerna exec --scope maci-contracts -- pnpm run deploy --network localhost"
+    "deploy:semaphore": "npx lerna exec --scope semaphore-contracts -- 'yarn compile && yarn deploy --network localhost' && npx ts-node scripts/copyDeployedSemaphoreAddress.ts",
+    "deploy:maci": "npx lerna exec --scope maci-contracts -- 'pnpm run compileSol && pnpm run deploy --network localhost' ",
+    "download-zkeys:test": "npm run --prefix maci download-zkeys:test"
   },
   "dependencies": {
     "dotenv": "^16.4.7",
