@@ -7,14 +7,18 @@
     "test:semaphore-contracts": "npx lerna run test --scope semaphore-contracts",
     "test:maci-contracts": "npx lerna run test --scope maci-contracts",
     "hardhat:node": "npx lerna exec --scope semaphore-contracts npm run start",
-    "hardhat:funds": "npx ts-node  scripts/hardhat-deploy.ts",
+    "hardhat:funds": "npx ts-node  scripts/hardhat-funds-address.ts",
     "deploy:semaphore": "npx lerna exec --scope semaphore-contracts -- 'yarn compile && yarn deploy --network localhost' && npx ts-node scripts/copyDeployedSemaphoreAddress.ts",
     "deploy:maci": "npx lerna exec --scope maci-contracts -- 'pnpm run compileSol && pnpm run deploy --network localhost' ",
-    "download-zkeys:test": "npm run --prefix maci download-zkeys:test"
+    "download-zkeys:test": "npm run --prefix maci download-zkeys:test",
+    "test:semaphore": "npx ts-node scripts/mock-groups-semaphore.ts"
   },
   "dependencies": {
     "dotenv": "^16.4.7",
-    "ethers": "^6.13.4"
+    "ethers": "^6.13.4",
+    "@semaphore-protocol/group": "file:semaphore/packages/group",
+    "@semaphore-protocol/identity": "file:semaphore/packages/identity",
+    "@semaphore-protocol/proof": "file:semaphore/packages/proof"
   },
   "devDependencies": {
     "lerna": "^8.1.9",

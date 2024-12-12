@@ -11,6 +11,7 @@ const wallet =  new ethers.Wallet(process.env.HARDHAT_SIGNER_PK as string,provid
 console.info("Send funds... ")
 
 const recipient = new ethers.Wallet(process.env.BACKEND_PRIVATE_KEY as string)
+
 const tx = await wallet.sendTransaction({
     to: recipient.address,
     value: parseEther("10.0")
