@@ -1,8 +1,8 @@
 
 import {readFile} from 'fs/promises'
-import path from "path"
+import * as path from 'path';
 
-const deployedContractsPath = path.resolve(__dirname, '../semaphore/packages/utils/src/networks/deployed-contracts.json')
+const deployedContractsPath = path.resolve(__dirname, 'deployed-semaphore-contracts.json')
 
 
 export type NetworkDeployedContracts = {

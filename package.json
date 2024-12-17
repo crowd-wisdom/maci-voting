@@ -18,7 +18,8 @@
     "ethers": "^6.13.4",
     "@semaphore-protocol/group": "file:semaphore/packages/group",
     "@semaphore-protocol/identity": "file:semaphore/packages/identity",
-    "@semaphore-protocol/proof": "file:semaphore/packages/proof"
+    "@semaphore-protocol/proof": "file:semaphore/packages/proof",
+    "maci-domainobjs": "file:maci/packages/domainobjs"
   },
   "devDependencies": {
     "lerna": "^8.1.9",
