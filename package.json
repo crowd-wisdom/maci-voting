@@ -1,0 +1,33 @@
+{
+  "name": "root",
+  "private": true,
+  "scripts": {
+    "install:packages": "npm install --prefix deterministic-deployment-proxy && pnpm install --prefix maci && yarn install --modules-folder semaphore",
+    "build:all": "lerna run build --ignore=website && cd deterministic-deployment-proxy && npm run build",
+    "build:deterministic-deployment": "cd deterministic-deployment-proxy && npm run build",
+    "build:semaphore-contracts": "npx lerna exec --scope semaphore-contracts npm run compile",
+    "build:maci-contracts": "npx lerna run build --scope maci-contracts",
+    "test:semaphore-contracts": "npx lerna run test --scope semaphore-contracts",
+    "test:maci-contracts": "npx lerna run test --scope maci-contracts",
+    "hardhat:node": "npx lerna exec --scope semaphore-contracts npm run start",
+    "hardhat:funds": "npx ts-node  scripts/hardhat-funds-address.ts",
+    "deploy:deterministic": "cd deterministic-deployment-proxy && sh scripts/test.sh",
+    "deploy:semaphore": "npx lerna exec --scope semaphore-contracts -- 'yarn compile && yarn deploy --network localhost' && npx ts-node scripts/copyDeployedSemaphoreAddress.ts",
+    "deploy:maci": "npx lerna exec --scope maci-contracts -- 'pnpm run compileSol && pnpm run deploy --network localhost' ",
+    "download-zkeys:test": "npm run --prefix maci download-zkeys:test",
+    "test:semaphore": "npx ts-node scripts/mock-groups-semaphore.ts"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "ethers": "^6.13.4",
+    "@semaphore-protocol/group": "file:semaphore/packages/group",
+    "@semaphore-protocol/identity": "file:semaphore/packages/identity",
+    "@semaphore-protocol/proof": "file:semaphore/packages/proof",
+    "maci-domainobjs": "file:maci/packages/domainobjs"
+  },
+  "devDependencies": {
+    "lerna": "^8.1.9",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
+  }
+}
