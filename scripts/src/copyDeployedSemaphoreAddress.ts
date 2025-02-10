@@ -1,7 +1,8 @@
+export {}
 import { copyFile} from "fs"
 import path from "path"
 
-const deployedContractsPath = path.resolve(__dirname, '../semaphore/packages/utils/src/networks/deployed-contracts.json')
+const deployedContractsPath = path.join(process.cwd(),'/semaphore/packages/utils/src/networks/deployed-contracts.json')
 
 async function main() {
 
@@ -11,8 +12,7 @@ async function main() {
 
 export async function copyDeployedContracts() {
     const source = deployedContractsPath;
-    const destination = './scripts/deployed-semaphore-contracts.json';
-
+    const destination = path.join(__dirname, 'deployed-semaphore-contracts.json');
     copyFile(source, destination, (err: NodeJS.ErrnoException | null) => {
         if (err) {
           console.error('Error al copiar el archivo:', err);

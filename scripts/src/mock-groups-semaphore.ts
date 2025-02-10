@@ -1,12 +1,13 @@
+export {}
 import { Group } from "@semaphore-protocol/group"
 import { Identity } from "@semaphore-protocol/identity"
 import { generateProof } from "@semaphore-protocol/proof"
 import { ethers,parseEther,Contract, AbiCoder} from "ethers";
 import path from "path"
 import {readFile} from 'fs/promises'
-import { getDeployedContractsByNetworkWithPath } from "./utilsSemaphore.ts";
+import { getDeployedContractsByNetworkWithPath } from "./utilsSemaphore.js";
 import { Keypair } from "maci-domainobjs";
-import { getDeployedContractAddressMACI } from "./utilsMACI.ts";
+import { getDeployedContractAddressMACI } from "./utilsMACI.js";
 import 'dotenv/config'
 
 async function main() {

@@ -1,0 +1,20 @@
+{
+  "name": "semaphore-deployed-contracts",
+  "version": "1.0.0",
+  "description": "Utility to be able to use Semaphore contracts in MACI",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist"
+  ],
+  "author": "Lautaro Di Sanza",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^22.13.1",
+    "typescript": "^5.7.3"
+  }
+}
