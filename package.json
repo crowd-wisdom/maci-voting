@@ -2,7 +2,7 @@
   "name": "root",
   "private": true,
   "scripts": {
-    "install:packages": "npm install --prefix deterministic-deployment-proxy && pnpm install --prefix maci && yarn install --modules-folder semaphore",
+    "install:packages": "npm install --prefix deterministic-deployment-proxy && pnpm install --prefix maci && cd semaphore && yarn install",
     "build:all": "lerna run build --ignore=website  && cd deterministic-deployment-proxy && npm run build",
     "build:deterministic-deployment": "cd deterministic-deployment-proxy && npm run build",
     "build:semaphore-contracts": "npx lerna exec --scope semaphore-contracts npm run compile",
